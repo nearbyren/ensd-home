@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.orhanobut:logger:2.1.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/1a84f83f0b50b5d9c582c5f50ba77156/transformed/jetified-logger-2.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1a84f83f0b50b5d9c582c5f50ba77156/transformed/jetified-logger-2.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/1a84f83f0b50b5d9c582c5f50ba77156/transformed/jetified-logger-2.1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/1a84f83f0b50b5d9c582c5f50ba77156/transformed/jetified-logger-2.1.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/modules-2/files-2.1/com.orhanobut/logger/2.1.1/e06f569f0f9d665b03a30ccfccce270a093d40f8/logger-2.1.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/modules-2/files-2.1/com.orhanobut/logger/2.1.1/d2a69dc35847845dfbb97935041e35fc11b1b203/logger-2.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

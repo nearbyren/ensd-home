@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.bingoogolapple.AppInit:api:1.0.8@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/4b90e03b1b79b13d485921a2012f7560/transformed/jetified-api-1.0.8/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d18c1ecb7f450b10e2232338cda492e4/transformed/jetified-api-1.0.8/res" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/4b90e03b1b79b13d485921a2012f7560/transformed/jetified-api-1.0.8/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/4b90e03b1b79b13d485921a2012f7560/transformed/jetified-api-1.0.8/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/modules-2/files-2.1/com.github.bingoogolapple.AppInit/api/1.0.8/34e9003c36b89d0ed1e84006d177ef385e3036ef/api-1.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
