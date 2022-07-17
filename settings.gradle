@@ -11,3 +11,9 @@ rootProject.name = "ensd-home"
 include ':app'
 include ':home-module'
 include ':home-export'
+//include ':home-aars'
+include ':station-export'
+include ':station-module'
+project(":station-module").projectDir = file("/Users/lr/AndroidStudioProjects/1components/ensd2/ensd-station/station-module")
+project(":station-export").projectDir = file("/Users/lr/AndroidStudioProjects/1components/ensd2/ensd-station/station-export")
+
