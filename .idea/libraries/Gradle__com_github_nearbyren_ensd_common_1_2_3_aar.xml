@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.nearbyren:ensd-common:1.2.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/671f720cdee91459d53a233f871c8e4b/transformed/jetified-ensd-common-1.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/671f720cdee91459d53a233f871c8e4b/transformed/jetified-ensd-common-1.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/transforms-3/671f720cdee91459d53a233f871c8e4b/transformed/jetified-ensd-common-1.2.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/wrapper/dists/gradle-5.6.4-all/caches/modules-2/files-2.1/com.github.nearbyren/ensd-common/1.2.3/222d406e0858ced38219379793c5bfa00011a691/ensd-common-1.2.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
