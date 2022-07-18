@@ -1,0 +1,138 @@
+import ejiayou.composing.builds.Testing
+import ejiayou.composing.builds.ThirdLib
+
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'maven-publish'
+    id 'ejiayou.composing.builds'
+    id 'kotlin-android-extensions'
+//    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        //java 配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        //kotlin 配置
+        kapt {
+            arguments {
+                //根据模块名来命名路由根节点
+                arg("AROUTER_MODULE_NAME", project.getName())
+                //生成Json文件
+                //arg("AROUTER_GENERATE_DOC", "enable")，kotlin中使用最新版本不要这句话，否则会报错，具体错误信息请看本博客中kotlin依赖最新ARouter的坑
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions { exclude 'META-INF/rxjava.properties' }
+    //设置了resourcePrefix值后，所有的资源名必须以指定的字符串做前缀，否则会报错。
+    //但是resourcePrefix这个值只能限定xml里面的资源，并不能限定图片资源，所有图片资源仍然需要手动去修改资源名。
+    resourcePrefix "home_"
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
+}
+
+dependencies {
+    // 以 组件module 的方式依赖组件
+    implementation project(path: ':station-module')
+    implementation project(path: ':station-export')
+    testImplementation Testing.jUnit
+    androidTestImplementation Testing.androidJunit
+    androidTestImplementation Testing.espresso
+    //每个module必须引用 ARouter
+    kapt ThirdLib.Arouter.arouterCompiler
+//    implementation project(path: ':home-aars')
+//    api 'com.github.nearbyren.ensd-station:export:v1.1.7'
+//    api 'com.github.nearbyren.ensd-station:module:v1.1.7'
+    api 'com.github.nearbyren:ensd-common:1.2.3'
+    //注意这里只依赖  home-export（home-export 由壳工程引入）
+    implementation project(path: ':home-export')
+
+}
+
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.getSrcDirs() // 源码路径
+    archiveClassifier = "sources"
+}
+
+afterEvaluate {
+    publishing {
+        repositories { RepositoryHandler handler ->
+            handler.mavenLocal()
+            handler.maven {
+                url "${rootDir}/repo"
+            }
+            // 仓库用户名密码
+            // handler.maven { MavenArtifactRepository mavenArtifactRepository ->
+            //     // maven 仓库地址
+            //     url 'http://xx.xxx.xx.xx:8081/repository/core/'
+            //     // 访问仓库的 账号和密码
+            //     credentials {
+            //         username = "xxx"
+            //         password = "123456"
+            //     }
+            // }
+        }
+
+        publications {
+
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+
+                // Applies the component for the release build variant.
+                from components.release
+                artifact sourceJar // 上传源码
+                // Library Package Name (Example : "com.xxx.lib")
+                // NOTE : Different GroupId For Each Library / Module, So That Each Library Is Not Overwritten
+                groupId = 'ejiayou.home.module'
+
+                // Library Name / Module Name (Example : "androidfirstlib")
+                // NOTE : Different ArtifactId For Each Library / Module, So That Each Library Is Not Overwritten
+                artifactId = 'module'
+
+                // Version Library Name (Example : "1.0.0")
+                version = '1.0.0'
+
+                //指定路径 share_export-release.aar
+//                artifact "build/outputs/aar/${project.getName()}-release.aar"
+            }
+        }
+    }
+}
