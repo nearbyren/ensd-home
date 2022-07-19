@@ -1,13 +1,13 @@
 import ejiayou.composing.builds.Testing
+import ejiayou.composing.builds.ThirdLib
 
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven-publish'
-    id 'ejiayou.composing.builds'
     id 'kotlin-kapt'
+    id 'ejiayou.composing.builds'
 }
-
 android {
     compileSdk 30
 
@@ -19,7 +19,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
     }
 
     buildTypes {

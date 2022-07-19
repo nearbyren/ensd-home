@@ -7,9 +7,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/home_start"
+            android:id="@+id/pay_start"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="home"
+            android:textSize="16sp" />
     </LinearLayout>
 
 

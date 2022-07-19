@@ -1,4 +1,0 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file('station-export-release.aar'))
-
-// 如有多个aar，只需要再次add

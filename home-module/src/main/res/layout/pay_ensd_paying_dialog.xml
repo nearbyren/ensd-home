@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/pay_ensd_paying_dialog_bg_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+            <!--支付查询中-->
+            <LinearLayout
+                android:id="@+id/pay_ll_inquire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ProgressBar
+                    android:id="@+id/pay_ll_inquire_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:indeterminateDrawable="@drawable/load_progress_bg"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/pay_ll_inquire_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="支付结果查询中"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!--支付情况状态-->
+            <LinearLayout
+                android:id="@+id/pay_ll_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/pay_ensd_exclamation" />
+
+                <TextView
+                    android:id="@+id/pay_ll_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:text="是否完成支付"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46dp"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/pay_ll_status_pay_cancel"
+                        android:layout_width="130dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/pay_ensd_payind_dialog_left_bg"
+                        android:text="未付款"
+                        android:textColor="#333333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="12dp"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/pay_ll_status_paid_refresh"
+                        android:layout_width="130dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/pay_ensd_payind_dialog_right_bg"
+                        android:text="提交订单"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!--支付成功状态-->
+            <RelativeLayout
+                android:id="@+id/pay_suss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/pay_suss_iv_suss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/pay_ensd_success" />
+
+                <TextView
+                    android:id="@+id/pay_suss_tv_success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay_suss_iv_suss"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="是否完成支付"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/pay_suss_tv_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay_suss_tv_success"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    tools:text="201.11"
+                    android:textColor="#FF681C"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/pay_suss_tv_station_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/pay_suss_tv_amount"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    tools:text="中石化麒麟加油站 丨 92# 丨4号枪"
+                    android:textColor="#333333"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_above="@+id/pay_suss_btn_finish"
+                    android:background="@color/orange" />
+
+                <Button
+                    android:id="@+id/pay_suss_btn_finish"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/pay_ensd_payind_dialog_right_bg"
+                    android:text="完成"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>
