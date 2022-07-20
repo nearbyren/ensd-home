@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/station_rl_coupon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_index_bg_white">
+
+
+        <TextView
+            android:id="@+id/home_index_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_item_shape_bg1"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="2dp"
+            android:text="5km最便宜"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:id="@+id/home_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥8.53"
+                android:textColor="#333333"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/home_tv_ad_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_index_saving_bg_orange"
+                android:paddingLeft="4dp"
+                android:paddingTop="1dp"
+                android:paddingRight="4dp"
+                android:paddingBottom="1dp"
+                android:text="加200约省11"
+                android:textColor="#FF681C"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/home_index_line"
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/home_index_tag"
+            android:layout_alignTop="@+id/home_rl_right"
+            android:layout_alignBottom="@+id/home_rl_right"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toRightOf="@id/home_left"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:id="@+id/home_rl_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_index_tag"
+            android:layout_marginBottom="12dp"
+            android:layout_toRightOf="@id/home_index_line"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/home_index_tv_station_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="中石化特发加油站"
+                android:textColor="#292E33"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="4dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/home_index_tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="2.4km·南山区南海大道G4出口附近"
+                    android:textColor="#292E33"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:id="@+id/home_index_iv_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/home_position_address" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/home_rl_ad"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_index_recycle_ad"
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="19dp"
+                    android:textColor="#292E33"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

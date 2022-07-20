@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import ejiayou.common.module.mvvm.BaseBindActivity
-import ejiayou.home.module.databinding.PayMainActivityBinding
+import ejiayou.home.module.databinding.HomeMainActivityBinding
 
 /**
  * @author: lr
  * @created on: 2022/7/16 4:42 下午
  * @description:
  */
-class MainActivity : BaseBindActivity<PayMainActivityBinding>() {
+class MainActivity : BaseBindActivity<HomeMainActivityBinding>() {
     override fun initialize(savedInstanceState: Bundle?) {
 
         binding.payStart.setOnClickListener {
@@ -22,7 +22,7 @@ class MainActivity : BaseBindActivity<PayMainActivityBinding>() {
     }
 
     override fun layoutRes(): Int {
-        return R.layout.pay_main_activity
+        return R.layout.home_main_activity
     }
 
     override fun layoutView(): View? {
