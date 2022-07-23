@@ -40,11 +40,25 @@ android {
 
     }
 
+    flavorDimensions "default"/*, "abi"*///gradle3.0.0开始必须要有这么个属性不然会报错,
+
+    sourceSets {
+        main {
+            if (isModuleType == "lib") {
+                println("isModuleType - lib")
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                println("isModuleType - app")
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
 
     packagingOptions { exclude 'META-INF/rxjava.properties' }
@@ -53,12 +67,12 @@ android {
     resourcePrefix "home_"
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = '1.8'
     }
 
     buildFeatures {
@@ -67,23 +81,35 @@ android {
 }
 dependencies {
     // 以 组件module 的方式依赖组件
-//    implementation project(path: ':station-module')
-//    implementation project(path: ':station-export')
+
+
+    implementation project(path: ':common-module')
+
+
+    implementation project(path: ':index-module')
+    implementation project(path: ':index-export')
+
+    implementation project(path: ':order-module')
+    implementation project(path: ':order-export')
+
+    implementation project(path: ':me-module')
+    implementation project(path: ':me-export')
+
+
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
     //每个module必须引用 ARouter
     kapt ThirdLib.Arouter.arouterCompiler
-//    implementation project(path: ':home-aars')
-//    api 'com.github.nearbyren.ensd-station:export:v1.1.7'
-//    api 'com.github.nearbyren.ensd-station:module:v1.1.7'
-    api 'com.github.nearbyren:ensd-common:1.2.3'
+//    api 'com.github.nearbyren:ensd-common:v1.2.8'
     implementation project(path: ':home-export')
-    //智能下拉刷新
-    implementation 'io.github.scwang90:refresh-layout-kernel:2.0.5'
-    implementation 'com.github.bumptech.glide:glide:4.12.0'
 
-
+//    implementation 'com.github.nearbyren.ensd-index:export:v1.0.2'
+//    implementation 'com.github.nearbyren.ensd-index:module:v1.0.2'
+//    implementation 'com.github.nearbyren.ensd-order:export:v1.0.2'
+//    implementation 'com.github.nearbyren.ensd-order:module:v1.0.2'
+//    implementation 'com.github.nearbyren.ensd-me:export:v1.0.2'
+//    implementation 'com.github.nearbyren.ensd-me:module:v1.0.2'
 
 
 }

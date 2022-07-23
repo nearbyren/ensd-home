@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ejiayou.home.module">
 
-    <application>
+    <application android:theme="@style/Theme.App">
         <activity
             android:name=".HomeMainActivity"
             android:exported="true"
@@ -11,6 +11,17 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.App">
 
+        </activity>
+        <activity
+            android:name=".HomeTestActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.App">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
