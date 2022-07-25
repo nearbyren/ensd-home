@@ -15,6 +15,11 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.mvvm.BaseBindActivity
+import ejiayou.common.module.ui.BarHelperConfig
+import ejiayou.common.module.ui.BarOnBackListener
+import ejiayou.common.module.ui.BarOnNextListener
+import ejiayou.common.module.ui.ImmersionBarConfig
+import ejiayou.common.module.utils.ToastUtils
 import ejiayou.home.export.router.HomeRouterTable
 import ejiayou.home.module.databinding.HomeMainActivityBinding
 import ejiayou.index.export.router.IndexServiceUtil
@@ -33,6 +38,14 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
         return R.layout.home_main_activity
     }
 
+    override fun initImmersionBarConfig(): ImmersionBarConfig? {
+        return ImmersionBarConfig.builder().build()
+    }
+
+    override fun initBarHelperConfig(): BarHelperConfig? {
+        return BarHelperConfig.builder()
+         .build()
+    }
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
     }
 
@@ -44,7 +57,7 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
 
     override fun initialize(savedInstanceState: Bundle?) {
 
-        ImmersionBar.with(this).statusBarDarkFont(true,2f).init()
+//        ImmersionBar.with(this).statusBarDarkFont(true,2f).init()
 //        binding.homeStart.setOnClickListener {
 //            StationServiceUtil.navigateStationDetailPage()
 //            val manager = supportFragmentManager

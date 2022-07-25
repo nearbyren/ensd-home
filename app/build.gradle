@@ -56,12 +56,12 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':common-module')
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidJunit
     androidTestImplementation Testing.espresso
     api ThirdLib.Arouter.arouterApi
     kapt ThirdLib.Arouter.arouterCompiler
-    api project(path: ':home-module')
+    implementation project(path: ':common-module')
+    implementation project(path: ':home-module')
 
 }

@@ -83,7 +83,7 @@ dependencies {
     // 以 组件module 的方式依赖组件
 
 
-    implementation project(path: ':common-module')
+//     implementation project(path: ':common-module')
 
 
     implementation project(path: ':index-module')
@@ -101,7 +101,7 @@ dependencies {
     androidTestImplementation Testing.espresso
     //每个module必须引用 ARouter
     kapt ThirdLib.Arouter.arouterCompiler
-//    api 'com.github.nearbyren:ensd-common:v1.2.8'
+    implementation 'com.github.nearbyren:ensd-common:v1.2.7'
     implementation project(path: ':home-export')
 
 //    implementation 'com.github.nearbyren.ensd-index:export:v1.0.2'

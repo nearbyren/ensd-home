@@ -14,29 +14,55 @@ include ':home-module'
 include ':home-export'
 
 
-include ':common-module'
-project(":common-module").projectDir = file("C:\\project\\ensd\\ensd-common\\common-module")
-
-
-include ':index-export'
-include ':index-module'
-project(":index-module").projectDir = file("C:\\project\\ensd\\ensd-index\\index-module")
-project(":index-export").projectDir = file("C:\\project\\ensd\\ensd-index\\index-export")
-
-
-include ':order-export'
-include ':order-module'
-project(":order-module").projectDir = file("C:\\project\\ensd\\ensd-order\\order-module")
-project(":order-export").projectDir = file("C:\\project\\ensd\\ensd-order\\order-export")
-
-
-include ':me-export'
-include ':me-module'
-project(":me-module").projectDir = file("C:\\project\\ensd\\ensd-me\\me-module")
-project(":me-export").projectDir = file("C:\\project\\ensd\\ensd-me\\me-export")
+//include ':common-module'
+//project(":common-module").projectDir = file("C:\\project\\ensd\\ensd-common\\common-module")
+//
+//
+//include ':index-export'
+//include ':index-module'
+//project(":index-module").projectDir = file("C:\\project\\ensd\\ensd-index\\index-module")
+//project(":index-export").projectDir = file("C:\\project\\ensd\\ensd-index\\index-export")
+//
+//
+//include ':order-export'
+//include ':order-module'
+//project(":order-module").projectDir = file("C:\\project\\ensd\\ensd-order\\order-module")
+//project(":order-export").projectDir = file("C:\\project\\ensd\\ensd-order\\order-export")
+//
+//
+//include ':me-export'
+//include ':me-module'
+//project(":me-module").projectDir = file("C:\\project\\ensd\\ensd-me\\me-module")
+//project(":me-export").projectDir = file("C:\\project\\ensd\\ensd-me\\me-export")
 
 
 
 
 //project(":station-module").projectDir = file("/Users/lr/AndroidStudioProjects/1components/ensd2/ensd-station/station-module")
 //project(":station-export").projectDir = file("/Users/lr/AndroidStudioProjects/1components/ensd2/ensd-station/station-export")
+
+
+
+
+
+include ':common-module'
+project(":common-module").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-common/common-module")
+
+
+
+include ':index-export'
+include ':index-module'
+project(":index-module").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-index/index-module")
+project(":index-export").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-index/index-export")
+
+
+include ':order-export'
+include ':order-module'
+project(":order-module").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-order/order-module")
+project(":order-export").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-order/order-export")
+
+
+include ':me-export'
+include ':me-module'
+project(":me-module").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-me/me-module")
+project(":me-export").projectDir = file("/Users/lr/AndroidStudioProjects/ensd/ensd-me/me-export")
