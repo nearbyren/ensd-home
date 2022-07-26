@@ -44,8 +44,9 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
 
     override fun initBarHelperConfig(): BarHelperConfig? {
         return BarHelperConfig.builder()
-         .build()
+                .build()
     }
+
     override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
     }
 
@@ -57,7 +58,7 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
 
     override fun initialize(savedInstanceState: Bundle?) {
 
-//        ImmersionBar.with(this).statusBarDarkFont(true,2f).init()
+        ImmersionBar.with(this).statusBarDarkFont(true, 1f).init()
 //        binding.homeStart.setOnClickListener {
 //            StationServiceUtil.navigateStationDetailPage()
 //            val manager = supportFragmentManager
@@ -81,7 +82,7 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
 
         binding.homeViewPager.offscreenPageLimit = pagers.size
         binding.homeViewPager.adapter = adapter
-        binding.homeViewPager.setScanScroll(false)
+        binding.homeViewPager.setScanScroll(true)
         binding.homeViewPager.addOnPageChangeListener(this)
         setup(binding.homeTabLayout)
         binding.homeTabLayout.setViewPager(binding.homeViewPager)
@@ -92,8 +93,6 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
             val view: View =
                 LayoutInflater.from(MainActivity@ this).inflate(R.layout.home_menu_layout, container, false)
             val icon = view.findViewById<View>(R.id.icon) as ImageView
-            val name = view.findViewById<View>(R.id.name) as TextView
-            name.text = adapter.getPageTitle(position)
             when (position) {
                 0 -> icon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_index_selector))
                 1 -> icon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_order_selector))

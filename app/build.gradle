@@ -61,7 +61,6 @@ dependencies {
     androidTestImplementation Testing.espresso
     api ThirdLib.Arouter.arouterApi
     kapt ThirdLib.Arouter.arouterCompiler
-    implementation project(path: ':common-module')
     implementation project(path: ':home-module')
-
+    implementation 'com.github.nearbyren:ensd-common:v1.2.8'
 }

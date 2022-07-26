@@ -101,7 +101,7 @@ dependencies {
     androidTestImplementation Testing.espresso
     //每个module必须引用 ARouter
     kapt ThirdLib.Arouter.arouterCompiler
-    implementation 'com.github.nearbyren:ensd-common:v1.2.7'
+    implementation 'com.github.nearbyren:ensd-common:v1.2.8'
     implementation project(path: ':home-export')
 
 //    implementation 'com.github.nearbyren.ensd-index:export:v1.0.2'
