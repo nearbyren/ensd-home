@@ -80,20 +80,6 @@ android {
     }
 }
 dependencies {
-    // 以 组件module 的方式依赖组件
-
-
-//     implementation project(path: ':common-module')
-
-
-    implementation project(path: ':index-module')
-    implementation project(path: ':index-export')
-
-    implementation project(path: ':order-module')
-    implementation project(path: ':order-export')
-
-    implementation project(path: ':me-module')
-    implementation project(path: ':me-export')
 
 
     testImplementation Testing.jUnit
@@ -101,8 +87,23 @@ dependencies {
     androidTestImplementation Testing.espresso
     //每个module必须引用 ARouter
     kapt ThirdLib.Arouter.arouterCompiler
-    implementation 'com.github.nearbyren:ensd-common:v1.2.8'
-    implementation project(path: ':home-export')
+
+    // 以 组件module 的方式依赖组件
+
+//    api project(path: ':common-module')
+
+    api project(path: ':index-module')
+    api project(path: ':index-export')
+
+    api project(path: ':order-module')
+    api project(path: ':order-export')
+
+    api project(path: ':me-module')
+    api project(path: ':me-export')
+
+    api project(path: ':home-export')
+
+    api 'com.github.nearbyren:ensd-common:v1.2.8'
 
 //    implementation 'com.github.nearbyren.ensd-index:export:v1.0.2'
 //    implementation 'com.github.nearbyren.ensd-index:module:v1.0.2'

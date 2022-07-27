@@ -14,27 +14,27 @@ include ':home-module'
 include ':home-export'
 
 
-//include ':common-module'
-//project(":common-module").projectDir = file("C:\\project\\ensd\\ensd-common\\common-module")//
+include ':common-module'
+project(":common-module").projectDir = new File('../ensd-common/common-module')
 
 
 
 include ':index-export'
 include ':index-module'
-project(":index-module").projectDir = file("C:\\project\\ensd\\ensd-index\\index-module")
-project(":index-export").projectDir = file("C:\\project\\ensd\\ensd-index\\index-export")
+project(":index-module").projectDir = new File('../ensd-index/index-module')
+project(":index-export").projectDir = new File('../ensd-index/index-export')
 
 
 include ':order-export'
 include ':order-module'
-project(":order-module").projectDir = file("C:\\project\\ensd\\ensd-order\\order-module")
-project(":order-export").projectDir = file("C:\\project\\ensd\\ensd-order\\order-export")
+project(":order-module").projectDir = new File('../ensd-order/order-module')
+project(":order-export").projectDir = new File('../ensd-order/order-export')
 
 
 include ':me-export'
 include ':me-module'
-project(":me-module").projectDir = file("C:\\project\\ensd\\ensd-me\\me-module")
-project(":me-export").projectDir = file("C:\\project\\ensd\\ensd-me\\me-export")
+project(":me-module").projectDir = new File('../ensd-me/me-module')
+project(":me-export").projectDir = new File('../ensd-me/me-export')
 
 
 
