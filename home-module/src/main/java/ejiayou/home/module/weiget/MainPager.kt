@@ -1,4 +1,4 @@
-package ejiayou.home.module.view
+package ejiayou.home.module.weiget
 
 import android.content.Context
 import android.util.AttributeSet

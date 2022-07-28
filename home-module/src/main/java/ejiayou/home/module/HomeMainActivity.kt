@@ -1,12 +1,10 @@
 package ejiayou.home.module
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.gyf.immersionbar.ImmersionBar
@@ -16,10 +14,7 @@ import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems
 import com.orhanobut.logger.Logger
 import ejiayou.common.module.mvvm.BaseBindActivity
 import ejiayou.common.module.ui.BarHelperConfig
-import ejiayou.common.module.ui.BarOnBackListener
-import ejiayou.common.module.ui.BarOnNextListener
 import ejiayou.common.module.ui.ImmersionBarConfig
-import ejiayou.common.module.utils.ToastUtils
 import ejiayou.home.export.router.HomeRouterTable
 import ejiayou.home.module.databinding.HomeMainActivityBinding
 import ejiayou.index.export.router.IndexServiceUtil
@@ -92,11 +87,11 @@ class HomeMainActivity : BaseBindActivity<HomeMainActivityBinding>(), ViewPager.
         layout.setCustomTabView { container, position, adapter ->
             val view: View =
                 LayoutInflater.from(MainActivity@ this).inflate(R.layout.home_menu_layout, container, false)
-            val icon = view.findViewById<View>(R.id.icon) as ImageView
+            val homeTabIcon = view.findViewById<View>(R.id.home_tab_icon) as ImageView
             when (position) {
-                0 -> icon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_index_selector))
-                1 -> icon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_order_selector))
-                2 -> icon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_me_selector))
+                0 -> homeTabIcon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_index_selector))
+                1 -> homeTabIcon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_order_selector))
+                2 -> homeTabIcon.setImageDrawable(resources.getDrawable(R.drawable.home_menu_me_selector))
                 else -> throw IllegalStateException("Invalid position: $position")
             }
             view

@@ -8,7 +8,7 @@
         android:background="@color/transparent"
         android:orientation="vertical">
 
-        <ejiayou.home.module.view.MainPager
+        <ejiayou.home.module.weiget.MainPager
             android:id="@+id/home_viewPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
